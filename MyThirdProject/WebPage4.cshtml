@@ -1,0 +1,25 @@
+﻿@*These are comments in Razro - Demo of Arrays*@
+
+@*This code could also be put in between the body tags*@
+@{ 
+    <h3>Team Members</h3>
+    string[] teamMembers = { "Lori", "Jace", "Oscar", "Katie" };
+    Array.Reverse(teamMembers);
+    foreach (var person in teamMembers)
+        {
+        <p>@person</p>
+    }
+}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <p>The length of the Array is @teamMembers.Length</p>
+        <p>Oscar is in position @Array.IndexOf(@teamMembers, "Oscar") blah blah</p>        
+        <p>The array item in position 2 is @teamMembers[2]</p>
+    </body>
+</html>

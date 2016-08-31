@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <!--Single Statement-->
+    @{var total = 7;}
+    @{var myMessage = "HellowWorld";}
+
+    <!--Inline Expression -->
+    <p>The value of your account is: @total </p>
+    <p>The value of my  message is @myMessage</p>
+    <p>Add line of code</p>
+
+    <!--MultiLine Block-->
+    @{ var greeting = "Welcome to our Site!";
+        var weekday = DateTime.Now.DayOfWeek;
+        var greeting Message - greeting + "Today is: " + weekDay;
+    }
+
+    <!--Multi-line Block-->
+    @{ var outsideTemp = 79;
+            var weatherMessage = "Hello, it is " + outsideTemp + " degrees."}
+    <p>Today's Weather: @weatherMesage</p>
+
+    <p>Welcome to all new members. @greetingMessage</p>
+
+    <!--Embedding Escape Characters - use at sign right in front of string to make it a literal string.-->
+    @{
+        var myFilePath = @"C:\MyFolder\";
+        <p>The file path is @myFilePath</p>
+
+        var myQuote = @"""To be or not to be""";
+        <p>My Quote is @myQuote</p>
+    }
+
+    <table border="1">
+        <tr>
+            <td>Request URL</td>
+            <td>Relative Path</td>
+            <td>Full Path</td>
+            <td>HTTP Request Type</td>
+        </tr>
+        <tr>
+            <td>@Request.Url</td>
+            <td>@Request.FilePath</td>
+            <td>@Request.MapPath(Request.FilePath)</td>
+            <td>@Request.RequestType</td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
